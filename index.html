@@ -1,1 +1,191 @@
-<p>This totally isn't an excuse to try my hand at HTML again. In all honesty though, I saw the CS2 website with all the news and update stuff on it and I was like: "Woah, that's pretty cool"</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP: Containment Breach Remastered</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1f1f1f;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        
+        .header-container {
+            background-image: url('headerimage.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 10vh 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        h1 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 88px;
+        }
+
+        h2 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 48px;
+        }
+
+        h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 18px;
+        }
+        
+        .intro-container {
+            background-color: #333;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .news-grid {
+            display: grid;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .news-item {
+            background-color: #555;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-title {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .news-date {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .news-content {
+            color: #ccc;
+            font-size: 16px;
+        }
+        
+        .read-more {
+            float: right;
+            background-color: #666;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        
+        .modal-content {
+            background-color: #444;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .close-modal {
+            float: right;
+            background-color: #666;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .news-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>SCP: Containment Breach Revival</h1>
+        <h2>The remake nobody asked for but I'm making anyway</h2>
+        <h3>(Ignore the low quality header image, I'll fix it later)</h3>
+    </div>
+    <div class="intro-container">
+        <p>Downloads, Updates, and News will be hosted on this website here alongside the Discord</p>
+    </div>
+    <div class="main-content">
+        <h2>Latest News</h2>
+        <div class="news-grid">
+            <!-- Add news items here -->
+            <div class="news-item">
+                <span class="news-date">September 6, 2024</span>
+                <h3 class="news-title">Website Launch</h3>
+                <p class="news-content">Woah check this out, a website!</p>
+                <button class="read-more" onclick="openModal('modal-1')">Read More</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <h2>Website Launch</h2>
+            <p>This totally isn't an excuse to try my hand at HTML again. In all honesty though, I saw the CS2 website with all the news and update stuff on it and I was like: "Woah, that's pretty cool"</p>
+            <p>So here you have it, the WIP SCPCBR official website. This project is OPEN SOURCE, so if you think you can contribute through like GitHub Pull requests (RECOMMENDED over direct communication) then click the link below.</p>
+            <a href = "https://github.com/ThatJamGuy/SCP-CB-Revival">SCPCBRs GitHub Repo</a>
+            <button class="close-modal" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                modals[i].style.display = "none";
+            }
+        }
+
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName("modal");
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
